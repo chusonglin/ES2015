@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的值和名称相同，可简便操作</title>
+</head>
+<body>
+	<h3>变量的值和名称相同，可简便操作</h3>	
+	<p>变量的值和名称相同如<code>{a:a,b:b,fn:function(){}}</code>可以写作<code>{a,b,fn(){}}</code></p>
+	<br><br>
+</body>
+</html>
+
+<script>
+	//======================对象的名称和值相同时，课如下操作 ======================
+	let tea = '绿茶',fruit = '水果';
+
+	// es5的写法
+
+	let foods = {
+		tea:tea,
+		fruit:fruit,
+		fn:function(){}
+	}
+	
+	console.log(foods)
+
+	// es6的写法
+	let foods1 = {
+		tea,
+		fruit,
+		fn(){}
+	}
+
+	console.log(foods1)
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

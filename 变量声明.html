@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>一、【 let , const 】变量声明</title>
+	<title>一、【 let , const 】变量声明，以及作用域</title>
 </head>
 <body>
 	<h1>ES6变量声明</h1>
@@ -14,6 +14,12 @@
 	<br>
 	<h3>ES6变量声明</h3>
 	<p>ES6里变量声明一般在一对花括号内{}，成为块级作用域，声明方式一般有“ let ” 和 “ const ”</p>
+	<br>
+	<br>
+	<h3>ES6作用域【块级作用域】</h3>
+	<p>ES5有两种作用域类型，全局作用域和函数作用域，</p>
+	<p>ES6作用域是块级作用域，所谓“块”，即是一组括号,在一组大括号内用“let”声明的作用域，只在这个块内有效</p>
+
 </body>
 </html>
 <script>
@@ -26,12 +32,15 @@
 
 	// ES6的变量声明
 	{
-		let rose = "玫瑰"; //用于声明一个变量，声明之后无法再次声明覆盖
-		//let rose ="玫瑰花" //这样就会报错，以为前面已经声明过了rose
-		const arr = [];	//用于声明一个常量,
-		//const arr = 3; //这样也会报错，因为arr已经被声明称一个数组
+		let rose = "玫瑰"; 		//用于声明一个变量，声明之后无法再次声明覆盖
+		// let rose ="玫瑰花" 	//这样就会报错，以为前面已经声明过了rose
+		const arr = [];			//用于声明一个常量,
+		//const arr = 3; 		//这样也会报错，因为arr已经被声明成为一个数组，const是限制的是给衡量分配值得动作
 		arr.push(1,2,3);
-		console.log(rose)//正常打印出玫瑰
-		console.log(arr)//正常打印出数组
+		console.log(rose)		//正常打印出玫瑰
+		console.log(arr)		//正常打印出数组
 	}
+
+
+	// -------------------分割线----------------------
 </script>

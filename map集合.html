@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Map()集合相关操作</title>
+</head>
+<body>
+	<h3>Map()声明</h3>
+	<p>以变量的形式new一个Map(),例如：<code>let fruit = new Map();</code></p>
+	<br>
+	<br>
+
+	<h3>set(),添加方法</h3>
+	<p>往Map()里面添加数据用 set('key','val'),以key、val的形式添加数据</p>
+	<br>
+	<br>
+	
+	<h3>size属性</h3>
+	<p>size属性返回Map()的长度</p>
+	<br>
+	<br>
+	
+	<h3>get()方法</h3>
+	<p>get('key值') 返回Map()中对应的值</p>
+	<br>
+	<br>
+	
+	<h3>delete()方法</h3>
+	<p>delete()方法删除Map()某一数据，返回true</p>
+	<br>
+	<br>
+	
+	<h3>forEach()方法</h3>
+	<p>forEach()方法循环遍历Map{}集合,有两个参数，第一个是val,第二个是key(参数顺序)</p>
+	<br>
+	<br>
+	
+	<h3>clear()方法</h3>
+	<p>clear()清空Map{}集合</p>
+	<br>
+	<br>
+	
+
+
+</body>
+</html>
+
+<script>
+
+let fruit = new Map();
+let food = {},cook = () => {}, str = "字符串"
+fruit.set(food,'馒头');
+fruit.set(cook,'番茄炒蛋');
+fruit.set(str,'我是字符串');
+
+console.log(fruit)
+console.log(fruit.size) //返回3
+console.log(fruit.get(food))	//返回馒头
+console.log(fruit.delete(str)) //返回true
+console.log(fruit.has(food))//返回true
+console.log(fruit) //返回 Map {Object {} => "馒头", function => "番茄炒蛋"}
+
+
+fruit.forEach((val,key) => {
+	console.log(`${key} = ${val}`)
+})
+
+
+fruit.clear();
+console.log(fruit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

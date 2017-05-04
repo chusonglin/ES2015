@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6的class类操作</title>
+</head>
+<body>
+	<h3>类的构建</h3>
+</body>
+</html>
+
+<script>
+// ----------------类的定义-----------------
+// class Chef {
+// 	constructor(food){
+// 		this.food = food;
+// 	}
+
+// 	cook (){
+// 		console.log(this.food)
+// 	}
+// }
+
+// let fn = new Chef('西红柿');
+// fn.cook()
+
+
+
+
+
+// ----------------类的设置和获取-----------------
+	
+// class Chef {
+// 	constructor(food){
+// 		this.food = food;
+// 		this.dish = [];
+// 	}
+
+// 	get menu(){
+// 		return this.dish;
+// 	}
+
+// 	set menu(dish){
+// 		this.dish.push(dish);
+// 	}
+
+// 	cook (){
+// 		console.log(this.food)
+// 	}
+// }
+
+// let fn = new Chef();
+// fn.menu = "番茄鸡蛋"; //类的设置
+// fn.menu = "花生米";//类的设置
+// console.log(fn.menu) 
+
+
+// ----------------类里面添加静态方法 -static-----------------
+	
+// class Chef {
+// 	constructor(food){
+// 		this.food = food;
+// 		this.dish = [];
+// 	}
+
+// 	get menu(){
+// 		return this.dish;
+// 	}
+
+// 	set menu(dish){
+// 		this.dish.push(dish);
+// 	}
+
+// 	static cook (food){
+// 		console.log(food)
+// 	}
+// }
+
+// Chef.cook('番茄炒蛋')
+
+
+
+// ----------------类的继承-extends-----------------
+	
+class Person {
+	contructor(name,birthday){
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+
+	intro(){
+		return `${this.name},${this.birthday}`;
+	}
+}
+
+class Chef extends Person {
+	contructor(name,birthday){
+		super(name,birthday)
+	}
+}
+
+
+let songlin = new Chef('songlin','1992-05-05');
+
+console.log(songlin.intro()) //打印出songlin 1992-05-05
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

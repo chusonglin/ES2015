@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Set()集合相关操作</title>
+</head>
+<body>
+	<h3>Set()声明</h3>
+	<p>以变量的形式new一个Set(),例如：<code>let fruit = new Set();</code></p>
+	<p>直接在Set('abc')里面设置数据，会展开打印出<code> Set{'a','b','c'}</code>，使用add('ef'),则会以一个整体向里添加</p>
+	<br>
+	<br>
+
+	<h3>add(),添加方法</h3>
+	<p>往Set()里面添加数据用 add()，Set 集合里的数据具有唯一性，添加两个相同的数据，只会出现一天</p>
+	<br>
+	<br>
+	
+	<h3>size属性</h3>
+	<p>size属性返回Set()的长度</p>
+	<br>
+	<br>
+	
+	<h3>has()方法</h3>
+	<p>has()方法返回Set()中是否含有某一数据，布尔值</p>
+	<br>
+	<br>
+	
+	<h3>delete()方法</h3>
+	<p>delete()方法删除Set()某一数据，返回true</p>
+	<br>
+	<br>
+	
+	<h3>forEach()方法</h3>
+	<p>forEach()方法循环遍历Set{}集合</p>
+	<br>
+	<br>
+	
+	<h3>clear()方法</h3>
+	<p>clear()清空Set{}集合</p>
+	<br>
+	<br>
+	
+
+
+</body>
+</html>
+
+<script>
+
+let fruit = new Set('abc');
+fruit.add('def')
+fruit.add('a')
+
+console.log(fruit)
+console.log(fruit.size) //返回4
+console.log(fruit.has('a'))	//返回true
+console.log(fruit.delete('a')) //返回true
+
+console.log(fruit) //返回 Set{'b','c','def'}
+
+
+fruit.forEach((fruit) => {
+	console.log(fruit)
+})
+
+
+fruit.clear();
+console.log(fruit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

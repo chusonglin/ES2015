@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数的name属性</title>
+</head>
+<body>
+	<h3>es6新属性——函数的属性</h3>
+	<p>函数的name属性，可以用来获取这个函数的名字</p>
+</body>
+</html>
+<script>
+	let breakfast = function (){} //生命式
+
+	function breakfast1(){} //匿名师
+
+	let breakfast2 = function breakfast3(){}
+
+
+	console.log(breakfast.name) //输出函数的名字 breakfast
+
+	console.log(breakfast1.name) //输出函数的名字 breakfast1
+
+	console.log(breakfast2.name) //输出 breakfast3，匿名函数的优先级 > 变量声明的函数,另外输入项输出breakfast3.name是报错的，函数已经声明为breakfast2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

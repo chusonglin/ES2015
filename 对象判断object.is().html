@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象属性</title>
+</head>
+<body>
+	<h3>Object对象属性添加</h3>
+	<p>可以应用一对象的key值动态更改</p>
+	<br>
+	<br>
+
+
+	<h3>【Object.is()】对象判断</h3>
+	<p>用于判断两个对象是否相等，能力要强于三等（===）</p>
+	<p>例如：<code>+0 == -0</code> 和 <code>+0 === -0</code> 返回的都是 “true” ,使用 <code>Object.is(+0,-0)</code>,返回的却是 “false” ,因为+0 和 -0 的确不一样.</p>
+	<p>再例如：<code>NaN == NaN </code>与 <code>NaN === NaN </code>返回的都是 false,使用 <code>Object.is(NaN,NaN)</code>,返回的却是 “true”,因为 NaN 和 NaN 的确一样</p>
+	<br>
+	<br>
+
+
+	<h3>【Object.assign()】可以把一个对象的属性赋值到另一个对象里面</h3>
+	<p>Object.assign('接受者，赋值到的目标'，'赋值的源')，第一个参数是"接受者，赋值到的目标",从第二个开始就是赋值的源，可以有多个</p>
+	<br>
+	<br>
+
+
+	<h3>【Object.setprototypeof()】可以在创建对象以后改变对象的prototype</h3>
+	<p>Object.assign('接受者，赋值到的目标'，'赋值的源')，第一个参数是"接受者，赋值到的目标",从第二个开始就是赋值的源，可以有多个</p>
+	<br>
+	<br>
+
+	<h3>【__proto__】可是获取或设置对象的prototype属性</h3>
+</body>
+</html>
+
+<script>
+	//======================对象添加属性 ======================
+
+
+	let food = {};
+	
+	food.dessert = '甜点';
+	food['drink'] = '饮料';
+
+
+	let eat = 'hot eat'
+	food[eat] = '面包'
+	
+	console.log(food)
+
+	// ---------------Object.is()-------------------
+
+	console.log(0 == 0)	//返回true
+
+	console.log(0 === 0)	//返回true
+
+	console.log(+0 == -0)	//返回true
+
+	console.log(+0 === -0)	//返回true
+
+	console.log(NaN == NaN)	//返回false
+
+	console.log(NaN === NaN)	//返回false
+
+
+	// Object.is()判断 
+	console.log(`Object.is()判断 `);
+	Object.is(0, 0)	//返回true
+
+	Object.is(+0, -0)	//返回false
+
+	Object.is(NaN,NaN)	//返回true
+
+
+	// ---------------Object.assign()-------------------
+
+	let fruit = {};
+	Object.assign(fruit,{a:'柠檬',d:'火龙果'},{b:'西瓜'},{a:'香蕉',e:'哈密瓜'})
+
+	console.log(fruit)
+
+
+	// ---------------Object.setprototypeof()-------------------
+
+	let fn1 = {
+		a(){
+			return "abc"
+		}
+	}
+
+	let fn2 = {
+		b(){
+			return "qwe"
+		}
+	}
+
+	let fn3 = Object.create(fn1); //基于fn1创建新对象fn3
+
+	console.log(fn3.a());//返回abc
+
+	console.log(Object.getPrototypeOf(fn3) === fn1)  //返回true
+
+	Object.setPrototypeOf(fn3,fn2) //第一个参数是设置的对象，第二个参数是设置成的那个对象（设置对象的值）
+
+	console.log(fn3.b()) //返回qwe
+
+	console.log(Object.getPrototypeOf(fn3) === fn2) //返回true
+
+
+	// ---------------__proto__-------------------
+
+	let fn11 = {
+		a(){
+			return "abc"
+		}
+	}
+
+	let fn22 = {
+		b(){
+			return "qwe"
+		}
+	}
+
+	let fn33 = {
+		__proto__ : fn11
+	}
+	console.log(fn33)
+	console.log(fn33.a()) //返回abc
+
+	console.log(Object.getPrototypeOf(fn33) == fn11)
+
+	fn33.__proto__ = fn22;
+
+	console.log(fn33.b()) //返回abc
+	console.log(Object.getPrototypeOf(fn33) == fn22)
+
+
+	// ---------------super-------------------
+
+	let fn111 = {
+		a(){
+			return "abc"
+		}
+	}
+
+	let fn333 = {
+		__proto__:fn111,
+		aa(){
+			return super.a() + 'efg';
+			//super.a()就是得到fn111里面a()的返回值
+		}
+	}
+	console.log(fn333.aa()) //返回abcdefg
+
+
+</script>

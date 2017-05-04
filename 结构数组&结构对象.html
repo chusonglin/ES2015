@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二、【 解构 】解构数组、对象</title>
+</head>
+<body>
+	<h3>“解构”字面意思即是分解一个东西的结构</h3>
+	<br>
+	<br>
+	<h3>解构数组</h3>
+	<p>解构数组即是声明一个数组，数组内以变量分别对应需要解构的数字，即可一一对应</p>
+	<br>
+	<br>
+	<h3>解构对象</h3>
+	<p>解构对象即是声明一个json对象，所声明的对象内的“key值”即是需要解构的原对象的“key值”，所声明的“val值”即是自己随意定义的一个变量用以对应需要解构的对象的“val值”，以此方法一一对应即可解构对象</p>
+	<br>
+	<br>
+</body>
+</html>
+<script>
+	function breakfast(){
+		return ['蛋糕','牛奶','面包']
+	}
+
+	// es5的做法即是如下
+	var tmp = breakfast(),a = tmp[0],b = tmp[1],c = tmp[2];
+	console.log('es5:',a,b,c);
+
+	// es6解构数组如下
+	let [aa,bb,cc] = breakfast();
+
+	console.log('es6:',aa,bb,cc);
+
+	// ------------------------------分割线------------------------------------
+
+	function breakfast1(){
+		return {'a':'蛋糕','b':'牛奶','c':'面包'}
+	}
+
+	let {'a':aaa,'b':bbb,'c':ccc} = breakfast1();
+	console.log(aaa,bbb,ccc)
+</script>

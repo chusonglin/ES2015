@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符模板</title>
+</head>
+<body>
+	<h3>字符模板</h3>
+	<p>es6的字符模板即是以另一种方法去处理字符串和变量。</p>
+	<p>字符模板可以支持随意换行操作。支持多空格处理字符串。</p>
+	<br>
+	<br>
+	<h3>标签模板</h3>
+	<p>es6的标签模板的“标签”即是一个函数名称（就是一个函数），可以按照需要处理字符模板。</p>
+	<br><br>
+	<h3>有关模板字符串的一些方法</h3>
+	<p>【startsWith】判断一个模板字符串是否以指定的字符“开头”，返回“true”或“false”</p>
+	<p>【endsWith】判断一个模板字符串是否以指定的字符“结尾”，返回“true”或“false”</p>
+	<p>【includes】判断一个模板字符串是否“包含”以指定的字符，返回“true”或“false”</p>
+
+</body>
+</html>
+
+<script>
+	// es5的处理字符串的做法
+	let a = 6,b = 9;
+	var sum = '数字'+ a + '+' + '数字' + b + '=' + (a + b);
+	console.log(sum);
+
+	// es6字符模板做法
+	let sum1 = `数字${a}加上数字${b}等于${a+b}`;
+	console.log(sum1);
+
+	// --------------------------------分割线------------------------------
+
+	// 标签模板处理字符串
+	let sum2 = numFn`数字${a}加   上\n
+	数字${b}等于${a+b}`;
+	function numFn(str,...vals){
+		console.log(str);
+		console.log(vals);
+	}
+
+	// --------------------------------分割线------------------------------
+	
+	// 有关模板字符串的一些方法
+	let sum3 = `数字${a}加上数字${b}等于${a+b}`;
+	console.log(sum3.startsWith('数字'))
+	console.log(sum3.endsWith('15'))
+	console.log(sum3.includes('100'))
+</script>

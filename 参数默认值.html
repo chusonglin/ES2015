@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>为函数设置默认值</title>
+</head>
+<body>
+	
+</body>  
+</html>
+<script>
+	//es5参数赋值 
+	function breakfast(a,b){
+		return `返回参数a:${a} 参数b:${b}`;
+	}
+
+	console.log(breakfast()); //不传值的情况下，返回undefined
+
+
+	//es6参数默认值 
+	function breakfast1(a = '鸡蛋',b = '柠檬水'){
+		return `返回参数a:${a} 参数b:${b}`;
+	}
+
+	console.log(breakfast1());//不传值的情况下，返回默认值
+</script>
